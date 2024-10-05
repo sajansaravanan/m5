@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carina Nebula</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Carina Nebula</h1>
+        <img src="https://stsci-opo.org/STScI-01G77PKYA4T05YKJ3EDQ36NZCX.png" alt="Carina Nebula Image">
+        <p>The Carina Nebula is one of the largest and brightest nebulae in the sky, located about 7,500 light-years from Earth.</p>
+        <p>It is a stunning region of star formation, filled with dense clouds of gas and dust.</p>
+        <p>NASA's James Webb Space Telescope has captured detailed images of this nebula, revealing its beautiful structure.</p>
+        <p>The nebula hosts some of the most massive stars known, making it a key area for understanding stellar evolution.</p>
+        <p>The Carina Nebula continues to be a subject of fascination for astronomers and space enthusiasts alike.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>How far is the Carina Nebula from Earth?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) 3,000 light-years</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) 5,000 light-years</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) 7,500 light-years</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) 10,000 light-years</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'C') {
+                resultDiv.textContent = "Correct! The Carina Nebula is about 7,500 light-years from Earth.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is C) 7,500 light-years.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
